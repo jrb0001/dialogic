@@ -147,6 +147,8 @@ func process() -> void:
 		var event_content: String = line_stripped
 		var event: DialogicEvent = event_from_string(event_content, event_cache)
 
+		event.source_path = resource_path
+		event.source_line_number = idx + 1
 		event.empty_lines_above = empty_lines
 		# add the following lines until the event says it's full or there is an empty line
 		while not event.is_string_full_event(event_content):
