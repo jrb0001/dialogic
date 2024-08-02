@@ -152,8 +152,8 @@ func get_locales(_filter: String) -> Dictionary:
 		var language_name := TranslationServer.get_language_name(locale)
 
 		# Invalid locales return an empty String.
-		if language_name.is_empty():
-			continue
+		#if language_name.is_empty():
+		#	continue
 
 		suggestions[locale] = { 'value': locale, 'tooltip': language_name }
 
