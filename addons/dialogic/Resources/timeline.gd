@@ -51,6 +51,9 @@ func as_text() -> String:
 		for idx in range(0, len(events)):
 			var event: DialogicEvent = events[idx]
 
+			event.source_path = resource_path
+			event.source_line_number = result.count("\n") + 1
+
 			if event.event_name == 'End Branch':
 				indent -= 1
 				continue
